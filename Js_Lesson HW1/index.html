@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="Style.css">
+
+</head>
+<body>
+    <form action="NewPage.html"> 
+    <input type="submit" name="next" value="Другая страница"> 
+    </form> 
+
+
+    <button id="css">Изменить стили</button>
+    <button id="html">Изменить стили</button>
+    
+    <script>
+    document.getElementById('css').addEventListener('click', changeCSS);
+    document.getElementById('html').addEventListener('click', function(){
+      updateHTML(
+        `<div style="display: flex;">
+          <div style="width: 25%;">1</div>
+          <div style="width: 25%;">2</div>
+          <div style="width: 25%;">3</div>
+          <div style="width: 25%;">4</div>
+        </div>
+        <a href="index.html">back</a>`
+      );
+    });
+    
+    function changeCSS(){
+      document.head.insertAdjacentHTML('beforeend', `
+        <style> body { background-color: #ffe2aa; color: #123; } </style>
+      `);
+    }
+    
+    function updateHTML(html){
+      document.body.innerHTML = html;
+    }
+    </script>
+</script>
+<p>Среднее значение температуры </p>
+<script>
+var Canada = 22;
+var Germany = 12;
+var Spain = 32;
+ var temp = Spain+Canada+Germany;
+ var tempSr = temp/3;
+document.writeln(tempSr);
+</script>
+<p>Макс значение!</p>
+<script>
+var maxT=Math.max(Canada,Germany,Spain); 
+document.writeln(maxT);
+
+</script>
+</body>
+</html>
